@@ -26,8 +26,6 @@ function SiteCard({ site }: { site: StoredSite }) {
             {[site.lead.segmento, localidade].filter(Boolean).join(" · ")}
           </p>
         </div>
-
-        {/* Dot de cor do accent do tema */}
         <span
           className="mt-1 shrink-0 w-3 h-3 rounded-full"
           style={{ backgroundColor: site.theme.accent }}
@@ -41,7 +39,7 @@ function SiteCard({ site }: { site: StoredSite }) {
       <div className="mt-4 flex items-center justify-between">
         <span className="text-[11px] text-mute/70 font-mono">{date}</span>
         <Link
-          href={`/preview/${site.id}`}
+          href={`/${site.id}`}
           target="_blank"
           className="rounded-md px-4 py-2 text-[13px] font-semibold text-white transition-opacity hover:opacity-80"
           style={{ backgroundColor: site.theme.accent }}
@@ -58,7 +56,6 @@ export default async function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-bg">
-      {/* Header */}
       <header className="border-b border-rule bg-bg px-6 py-5">
         <div className="max-w-[1280px] mx-auto flex items-center justify-between">
           <div>
@@ -76,12 +73,15 @@ export default async function DashboardPage() {
       </header>
 
       <main className="max-w-[1280px] mx-auto px-6 md:px-8 py-10">
-        {/* Instrução de uso */}
+        {/* Instruções */}
         <div className="mb-8 rounded-xl border border-rule bg-ink/[0.02] p-5">
-          <p className="txt-eyebrow text-mute mb-2">Como usar</p>
-          <code className="block text-[12px] text-ink/70 leading-relaxed whitespace-pre-wrap">
-            {`POST /api/generate\nContent-Type: application/json\n\n{ "nome": "...", "segmento": "...", "cidade": "...", "telefone": "..." }`}
-          </code>
+          <p className="txt-eyebrow text-mute mb-2">Workflow</p>
+          <ol className="text-[13px] text-mute space-y-1 list-decimal list-inside">
+            <li>No agencia-hub, clique em <strong className="text-ink">"Copiar para Claude Code"</strong> na página do lead</li>
+            <li>Abra o terminal do Claude Code neste repositório</li>
+            <li>Cole os dados — Claude Code gera o site automaticamente</li>
+            <li>Revise, faça commit e push → Vercel publica em segundos</li>
+          </ol>
         </div>
 
         {sites.length === 0 ? (
@@ -91,8 +91,7 @@ export default async function DashboardPage() {
               Nenhum site gerado ainda
             </p>
             <p className="text-[14px] text-mute">
-              Faça um POST em <code className="font-mono">/api/generate</code>{" "}
-              com os dados do lead para começar.
+              Use o Claude Code com os dados de um lead para gerar o primeiro site.
             </p>
           </div>
         ) : (
