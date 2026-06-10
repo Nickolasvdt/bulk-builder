@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --accent: #7a0000;
+  --sun: #420000;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #050707;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #7a0000;
+  color: #ffffff;
+}
+
+/* Hairlines */
+.rule-t { border-top: 1px solid rgba(5, 7, 7, 0.08); }
+.rule-b { border-bottom: 1px solid rgba(5, 7, 7, 0.08); }
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .rule-t { border-top-width: 0.5px; }
+  .rule-b { border-bottom-width: 0.5px; }
+}
+
+/* Scrollbar em containers horizontais */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Utilitários de tipografia — idênticos ao bulk-site */
+.txt-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.txt-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
