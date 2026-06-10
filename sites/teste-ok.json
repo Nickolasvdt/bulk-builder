@@ -1,0 +1,18 @@
+{
+  "id": "teste-ok",
+  "createdAt": "2026-06-10T00:00:00.000Z",
+  "lead": { "nome": "Barbearia Teste OK", "segmento": "barbearia", "cidade": "SP", "estado": "SP", "telefone": "11999999999", "email": null, "instagram": null, "pitch_sugerido": null, "tags": [], "heat_score": null, "heat_reasoning": null, "source_data": { "rating": 5, "reviews_count": 10 } },
+  "content": {
+    "meta": { "titulo": "Barbearia Teste OK — Barbearia em SP", "descricao": "Cortes masculinos em SP. Agende pelo WhatsApp agora mesmo!" },
+    "hero": { "headline": "Corte que define. Estilo real.", "subheadline": "Barbearia no coração de SP com atendimento personalizado.", "cta_primario": "Agendar pelo WhatsApp", "cta_secundario": "Ver serviços" },
+    "services": [
+      { "emoji": "✂️", "titulo": "Corte Masculino", "descricao": "Corte sob medida para o seu rosto." },
+      { "emoji": "🪒", "titulo": "Barba", "descricao": "Navalha e modelagem profissional." },
+      { "emoji": "💈", "titulo": "Degradê", "descricao": "Fade preciso nas laterais." }
+    ],
+    "about": { "texto": "Aqui em SP, cuidamos de cada detalhe do seu visual com atenção e respeito.", "highlights": [{"valor":"5+","label":"Anos de experiência"},{"valor":"50+","label":"Clientes atendidos"},{"valor":"5★","label":"Avaliação média"}] },
+    "social_proof": { "titulo": "O que dizem nossos clientes", "testimonials": [{"nome":"João Silva","texto":"Ótimo atendimento, saí muito satisfeito. Já voltei três vezes.","estrelas":5},{"nome":"Carlos Costa","texto":"Melhor barbearia da região, recomendo muito a todos os amigos.","estrelas":5}] },
+    "contact": { "headline": "Vamos conversar?", "subtexto": "Manda mensagem e a gente marca seu horário." }
+  },
+  "theme": { "accent": "#92400e", "sun": "#78350f", "heroImage": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80" }
+}
