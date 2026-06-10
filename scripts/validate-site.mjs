@@ -71,6 +71,9 @@ function validateSite(filePath) {
     if (words > 8) errors.push(`hero.headline: ${words} palavras (máx 8)`);
   }
 
+  const subheadline = data.content?.hero?.subheadline ?? '';
+  if (!subheadline.trim()) errors.push('hero.subheadline ausente ou vazio');
+
   const ctaPrimario = data.content?.hero?.cta_primario ?? '';
   if (!ctaPrimario.trim()) errors.push('hero.cta_primario ausente ou vazio');
 
@@ -133,6 +136,10 @@ function validateSite(filePath) {
   if (!data.theme?.accent) errors.push('theme.accent ausente');
   if (!data.theme?.sun) errors.push('theme.sun ausente');
   if (!data.theme?.heroImage) errors.push('theme.heroImage ausente');
+  if (data.theme?.accent && !/^#[0-9a-f]{6}$/i.test(data.theme.accent))
+    errors.push(`theme.accent inválido: "${data.theme.accent}" (formato esperado: #rrggbb)`);
+  if (data.theme?.heroImage && !data.theme.heroImage.startsWith('https://images.unsplash.com/'))
+    errors.push(`theme.heroImage inválido: deve começar com https://images.unsplash.com/`);
 
   return errors;
 }

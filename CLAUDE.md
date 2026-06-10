@@ -113,8 +113,8 @@ Criar `sites/[slug].json` com este formato exato:
     "heat_score": null,
     "heat_reasoning": null,
     "source_data": {
-      "rating": "[número ou null]",
-      "reviews_count": "[número ou null]"
+      "rating": null,
+      "reviews_count": null
     }
   },
   "content": {
