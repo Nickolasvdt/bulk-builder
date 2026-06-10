@@ -1,0 +1,61 @@
+{
+  "id": "restaurante-da-praia",
+  "createdAt": "2026-06-10T00:00:00.000Z",
+  "lead": {
+    "nome": "Restaurante da Praia",
+    "segmento": "restaurante",
+    "cidade": "Florianópolis",
+    "estado": "SC",
+    "telefone": "48999999999",
+    "email": "contato@restaurantedapraia.com.br",
+    "instagram": "restaurantedapraia",
+    "pitch_sugerido": "Frutos do mar frescos com vista para o mar em Florianópolis",
+    "tags": ["frutos-do-mar", "vista-mar"],
+    "heat_score": 85,
+    "heat_reasoning": "Alto potencial — localização premium e especialidade única",
+    "source_data": { "rating": 4.9, "reviews_count": 312 }
+  },
+  "content": {
+    "meta": {
+      "titulo": "Restaurante da Praia — Frutos do Mar em Florianópolis",
+      "descricao": "Frutos do mar frescos com vista para o mar em Florianópolis. Faça sua reserva pelo WhatsApp!"
+    },
+    "hero": {
+      "headline": "O mar no prato, Floripa no coração.",
+      "subheadline": "Frutos do mar frescos servidos com vista para o oceano, aqui em Florianópolis.",
+      "cta_primario": "Fazer reserva pelo WhatsApp",
+      "cta_secundario": "Ver cardápio"
+    },
+    "services": [
+      { "emoji": "🦐", "titulo": "Frutos do Mar", "descricao": "Camarão, lula e polvo frescos direto do barco." },
+      { "emoji": "🐟", "titulo": "Peixe Grelhado", "descricao": "Peixe do dia grelhado na brasa com acompanhamentos." },
+      { "emoji": "🍝", "titulo": "Massas Artesanais", "descricao": "Massas feitas na hora com molhos da casa." },
+      { "emoji": "🚗", "titulo": "Delivery", "descricao": "Entregamos em toda Florianópolis em até 45 minutos." }
+    ],
+    "about": {
+      "texto": "Desde 2015 servimos o melhor do mar catarinense com vista para a praia. Cada prato é feito com ingredientes locais e muito carinho. Em Florianópolis, somos a escolha de quem quer uma refeição inesquecível.",
+      "highlights": [
+        { "valor": "10+", "label": "Anos de experiência" },
+        { "valor": "312+", "label": "Avaliações no Google" },
+        { "valor": "4.9★", "label": "Avaliação média" }
+      ]
+    },
+    "social_proof": {
+      "titulo": "O que nossos clientes dizem",
+      "testimonials": [
+        { "nome": "Maria Costa", "texto": "Melhor camarão que já comi em Floripa! Voltei três vezes no mesmo mês.", "estrelas": 5 },
+        { "nome": "João Almeida", "texto": "Vista incrível e comida ainda melhor. Levei a família toda e todo mundo amou.", "estrelas": 5 },
+        { "nome": "Ana Ferreira", "texto": "O peixe do dia estava perfeito. Atendimento impecável, recomendo demais.", "estrelas": 5 }
+      ]
+    },
+    "contact": {
+      "headline": "Reservou, garantiu!",
+      "subtexto": "Manda mensagem no WhatsApp e a gente já deixa sua mesa separada."
+    }
+  },
+  "theme": {
+    "accent": "#c2410c",
+    "sun": "#9a3412",
+    "heroImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+  }
+}
