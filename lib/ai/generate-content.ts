@@ -1,11 +1,11 @@
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
 import { env } from "../env";
 import { siteContentSchema, type Lead, type SiteContent } from "../types";
 
-let client: Anthropic | undefined;
+let client: GoogleGenAI | undefined;
 
-function getClient(): Anthropic {
-  if (!client) client = new Anthropic({ apiKey: env().ANTHROPIC_API_KEY });
+function getClient(): GoogleGenAI {
+  if (!client) client = new GoogleGenAI({ apiKey: env().GEMINI_API_KEY });
   return client;
 }
 
@@ -20,10 +20,9 @@ function buildPrompt(lead: Lead): string {
   ];
 
   if (rating != null)
-    lines.push(
-      `- Avaliação Google: ${rating} estrelas (${reviews ?? 0} avaliações)`
-    );
-  if (lead.tags.length > 0) lines.push(`- Tags: ${lead.tags.join(", ")}`);
+    lines.push(`- Avaliação Google: ${rating} estrelas (${reviews ?? 0} avaliações)`);
+  if (lead.tags.length > 0)
+    lines.push(`- Tags: ${lead.tags.join(", ")}`);
   if (lead.pitch_sugerido)
     lines.push(`- Pitch (contexto): "${lead.pitch_sugerido}"`);
   if (lead.heat_reasoning)
@@ -80,15 +79,11 @@ Crie conteúdo profissional e persuasivo para o site desse negócio. Retorne APE
 
 export interface GenerateContentResult {
   content: SiteContent;
-  tokensIn: number;
-  tokensOut: number;
 }
 
-export async function generateSiteContent(
-  lead: Lead
-): Promise<GenerateContentResult> {
-  const c = getClient();
-  const model = env().ANTHROPIC_MODEL;
+export async function generateSiteContent(lead: Lead): Promise<GenerateContentResult> {
+  const ai = getClient();
+  const model = env().GEMINI_MODEL;
   const maxRetries = 2;
   let lastRaw: string | undefined;
 
@@ -96,22 +91,19 @@ export async function generateSiteContent(
     const prompt =
       attempt === 0
         ? buildPrompt(lead)
-        : buildPrompt(lead) +
-          "\n\nIMPORTANTE: retorne APENAS JSON válido, sem nenhum texto adicional.";
+        : buildPrompt(lead) + "\n\nIMPORTANTE: retorne APENAS JSON válido, sem nenhum texto adicional.";
 
-    const message = await c.messages.create({
+    const response = await ai.models.generateContent({
       model,
-      max_tokens: 2048,
-      messages: [{ role: "user", content: prompt }],
+      contents: prompt,
+      config: {
+        responseMimeType: "application/json",
+        maxOutputTokens: 2048,
+      },
     });
 
-    const tokensIn = message.usage.input_tokens;
-    const tokensOut = message.usage.output_tokens;
-
-    const block = message.content[0];
-    if (block.type !== "text") continue;
-
-    lastRaw = block.text.trim();
+    lastRaw = response.text?.trim();
+    if (!lastRaw) continue;
 
     const jsonStr = lastRaw
       .replace(/^```(?:json)?\s*/i, "")
@@ -127,11 +119,11 @@ export async function generateSiteContent(
 
     const validated = siteContentSchema.safeParse(parsed);
     if (validated.success) {
-      return { content: validated.data, tokensIn, tokensOut };
+      return { content: validated.data };
     }
   }
 
   throw new Error(
-    `Claude não retornou JSON válido após ${maxRetries + 1} tentativas. Último output: ${lastRaw?.slice(0, 400)}`
+    `Gemini não retornou JSON válido após ${maxRetries + 1} tentativas. Último output: ${lastRaw?.slice(0, 400)}`
   );
 }

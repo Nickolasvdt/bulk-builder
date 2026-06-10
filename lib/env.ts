@@ -1,8 +1,8 @@
 import { z } from "zod";
 
 const envSchema = z.object({
-  ANTHROPIC_API_KEY: z.string().min(10),
-  ANTHROPIC_MODEL: z.string().default("claude-haiku-4-5-20251001"),
+  GEMINI_API_KEY: z.string().min(10),
+  GEMINI_MODEL: z.string().default("gemini-2.0-flash"),
   STORAGE_DIR: z.string().optional(),
 });
 

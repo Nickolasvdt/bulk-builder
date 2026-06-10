@@ -32,9 +32,7 @@ export async function POST(req: NextRequest) {
   try {
     const result = await generateSiteContent(lead);
     content = result.content;
-    console.log(
-      `[generate] ${lead.nome} — tokens: ${result.tokensIn}in/${result.tokensOut}out`
-    );
+    console.log(`[generate] ${lead.nome} — site gerado com sucesso`);
   } catch (err) {
     console.error("[generate] Claude error:", err);
     return NextResponse.json(
