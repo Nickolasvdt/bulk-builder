@@ -1,7 +1,6 @@
 import { promises as fs } from "fs";
 import path from "path";
 import type { StoredSite } from "./types";
-import { env } from "./env";
 
 function sitesDir(): string {
   const custom = process.env.STORAGE_DIR;
