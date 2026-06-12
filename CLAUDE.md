@@ -2,7 +2,7 @@
 
 ## O que este projeto faz
 
-Gera sites profissionais para leads B2B da Bulk Studio. Cada site é um arquivo JSON em `sites/[slug].json`, renderizado automaticamente em `https://bulk-builder.vercel.app/[slug]`. Quando um novo arquivo é commitado e enviado ao GitHub, a Vercel reconstrói e o site vai ao ar automaticamente.
+Gera sites profissionais para leads B2B da Bulk Studio. Cada site é um arquivo JSON em `sites/[slug].json`, renderizado automaticamente em `https://bulk-builder-seven.vercel.app/[slug]`. Quando um novo arquivo é commitado e enviado ao GitHub, a Vercel reconstrói e o site vai ao ar automaticamente.
 
 ---
 
@@ -390,7 +390,7 @@ git push
 Após o push, informe ao usuário:
 
 ```
-✓ Site no ar: https://bulk-builder.vercel.app/[slug]
+✓ Site no ar: https://bulk-builder-seven.vercel.app/[slug]
   (Vercel reconstrói em ~30s após o push)
 ```
 
