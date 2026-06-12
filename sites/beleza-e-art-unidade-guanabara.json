@@ -1,0 +1,66 @@
+{
+  "id": "beleza-e-art-unidade-guanabara",
+  "createdAt": "2026-06-11T00:00:00.000Z",
+  "lead": {
+    "nome": "Beleza e Art - Unidade Guanabara",
+    "segmento": "Salão de Beleza",
+    "cidade": "Campinas",
+    "estado": "SP",
+    "telefone": "+55 19 3241-9371",
+    "email": null,
+    "instagram": null,
+    "pitch_sugerido": "Olá Beleza e Art - Unidade Guanabara, gostaríamos de ajudá-los a melhorar a segurança do seu site e aumentar sua presença online",
+    "tags": ["rating_alto", "reviews_volume", "site_inseguro", "oportunidade_obvia"],
+    "heat_score": null,
+    "heat_reasoning": "Lead com rating alto e volume de reviews significativo",
+    "source_data": {
+      "rating": 4.8,
+      "reviews_count": 158
+    }
+  },
+  "content": {
+    "meta": {
+      "titulo": "Beleza e Art — Salão de Beleza em Campinas",
+      "descricao": "Corte, coloração e tratamentos capilares em Campinas. Agende pelo WhatsApp e cuide da sua beleza!"
+    },
+    "hero": {
+      "headline": "Beleza que transforma. Você que brilha.",
+      "subheadline": "Na Unidade Guanabara, em Campinas, cada visita é uma experiência completa de cuidado e estilo.",
+      "cta_primario": "Agendar pelo WhatsApp",
+      "cta_secundario": "Ver serviços"
+    },
+    "services": [
+      { "emoji": "✂️", "titulo": "Corte Feminino", "descricao": "Corte personalizado para valorizar o formato do seu rosto e realçar o seu estilo único." },
+      { "emoji": "🎨", "titulo": "Coloração e Mechas", "descricao": "Coloração, mechas e luzes aplicadas com técnica de proteção dos fios, para cabelos vibrantes e saudáveis." },
+      { "emoji": "💅", "titulo": "Manicure e Pedicure", "descricao": "Unhas tratadas e decoradas com capricho, para você sair pronta para qualquer ocasião." },
+      { "emoji": "💆", "titulo": "Tratamento Capilar", "descricao": "Hidratação, reconstrução e cronograma capilar para cabelos mais fortes e brilhantes." },
+      { "emoji": "🌿", "titulo": "Escova Progressiva", "descricao": "Progressiva e escova orgânica para alisar e disciplinar os fios com durabilidade real." },
+      { "emoji": "💄", "titulo": "Maquiagem", "descricao": "Maquiagem para eventos, festas e dia a dia — do look natural ao sofisticado, feita para durar." }
+    ],
+    "about": {
+      "texto": "A Beleza e Art Unidade Guanabara nasceu em Campinas pra ser o lugar onde você chega como cliente e sai como amiga. A gente cuida de cada detalhe — do corte à coloração — pra você sair renovada e confiante toda vez.",
+      "highlights": [
+        { "valor": "5+", "label": "Anos de experiência" },
+        { "valor": "158+", "label": "Avaliações no Google" },
+        { "valor": "4.8★", "label": "Avaliação média" }
+      ]
+    },
+    "social_proof": {
+      "titulo": "O que nossas clientes dizem",
+      "testimonials": [
+        { "nome": "Ana Costa", "texto": "Fiz coloração aqui e o resultado foi incrível. Meu cabelo nunca ficou tão saudável e bonito!", "estrelas": 5 },
+        { "nome": "Fernanda Souza", "texto": "Já sou cliente há anos. A manicure é nota 10 e o atendimento é sempre super atencioso.", "estrelas": 5 },
+        { "nome": "Maria Santos", "texto": "Fiz escova progressiva e adorei! Durou muito mais do que esperava. Indiquei para todas as amigas.", "estrelas": 5 }
+      ]
+    },
+    "contact": {
+      "headline": "Vamos cuidar de você?",
+      "subtexto": "Manda mensagem e a gente já encontra o melhor horário pra você, aqui no Guanabara."
+    }
+  },
+  "theme": {
+    "accent": "#7a0000",
+    "sun": "#420000",
+    "heroImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80"
+  }
+}
